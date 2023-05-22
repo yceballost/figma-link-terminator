@@ -1,4 +1,4 @@
-# Figma Link Terminator
+# Figma Tab Terminator
 
 Chrome extension to keep your chrome tabs clean when you use Figma Desktop and open tones of links.
 
