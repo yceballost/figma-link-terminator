@@ -1,0 +1,10 @@
+{
+  "manifest_version": 2,
+  "name": "Figma Tab Terminator",
+  "version": "1.0",
+  "permissions": ["tabs"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
