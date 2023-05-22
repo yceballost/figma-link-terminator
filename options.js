@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var guardarButton = document.getElementById("guardar");
 
   chrome.storage.sync.get(["tiempoCierre"], function (result) {
-    tiempoInput.value = result.tiempoCierre || 10;
+    tiempoInput.value = result.tiempoCierre || 6;
   });
 
   guardarButton.addEventListener("click", function () {

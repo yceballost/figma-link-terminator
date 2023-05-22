@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var pausarCheckbox = document.getElementById("pausar");
 
   chrome.storage.sync.get(["tiempoCierre", "pausado"], function (result) {
-    tiempoInput.value = result.tiempoCierre || 10;
+    tiempoInput.value = result.tiempoCierre || 6;
     pausarCheckbox.checked = result.pausado || false;
   });
 
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var tiempo = parseInt(tiempoInput.value);
 
     chrome.storage.sync.set({ tiempoCierre: tiempo }, function () {
-      alert("Interval time updated!");
+      alert("Time updated!");
 
       chrome.runtime.sendMessage({
         action: "actualizarTiempoCierre",
