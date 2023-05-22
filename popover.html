@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/mistica-css@latest/css/telefonica.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/mistica-css-components@0.12.0"
+    />
+    <title>Opciones de la extensión</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 24px;
+        background: var(--background);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="number"] {
+        width: 156px;
+        color: var(--textPrimary);
+      }
+
+      button {
+        margin-top: 10px;
+        width: 100%;
+        height: 40px;
+        border-radius: 999px;
+      }
+
+      label {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <label class="text--primary text--preset-2" for="tiempo"
+      >Time to close (in seconds)</label
+    >
+    <input type="number" id="tiempo" min="1" value="10" /> -->
+
+    <div class="stack space-24">
+      <div class="inline space-8 align-center">
+        <input type="checkbox" id="pausar" />
+        <label class="text--primary text--preset-2" for="pausar"
+          >Pause extension
+        </label>
+      </div>
+      <div class="stack space-8">
+        <div class="input-text">
+          <div>
+            <input
+              id="tiempo"
+              type="number"
+              min="1"
+              value="6"
+              placeholder=" "
+              value="Select me"
+            />
+            <label for="firstname">Time to close (seconds)</label>
+          </div>
+        </div>
+        <button class="button--primary" id="guardar">Save</button>
+      </div>
+    </div>
+    <script src="popover.js"></script>
+  </body>
+</html>
