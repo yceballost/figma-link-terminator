@@ -1,6 +1,6 @@
 var url = "https://www.figma.com/file/"; // Cambia la URL por la que deseas cerrar las pestañas
 
-var tiempoCierre = 6; // Valor predeterminado del tiempo de cierre en segundos
+var tiempoCierre = 10; // Valor predeterminado del tiempo de cierre en segundos
 var pausado = false; // Estado predeterminado de pausa
 
 chrome.runtime.onInstalled.addListener(function () {

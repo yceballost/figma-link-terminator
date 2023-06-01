@@ -2,11 +2,11 @@
   "manifest_version": 2,
   "name": "Figma Tab Terminator",
   "author": "Yayo",
-  "version": "2.0",
+  "version": "2.1",
   "permissions": ["tabs", "storage"],
   "background": {
     "scripts": ["background.js"],
-    "persistent": false
+    "persistent": true
   },
   "browser_action": {
     "default_popup": "popover.html",

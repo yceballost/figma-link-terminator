@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function () {
   var tiempoInput = document.getElementById("tiempo");
   var guardarButton = document.getElementById("guardar");
   var pausarCheckbox = document.getElementById("pausar");
 
   chrome.storage.sync.get(["tiempoCierre", "pausado"], function (result) {
-    tiempoInput.value = result.tiempoCierre || 6;
+    tiempoInput.value = result.tiempoCierre || 10;
     pausarCheckbox.checked = result.pausado || false;
   });
 
@@ -36,4 +36,4 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
-});
+};
