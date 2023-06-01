@@ -3,13 +3,12 @@ var url = "https://www.figma.com/file/"; // Cambia la URL por la que deseas cerr
 var tiempoCierre = 10; // Valor predeterminado del tiempo de cierre en segundos
 var pausado = false; // Estado predeterminado de pausa
 
-chrome.runtime.onInstalled.addListener(function () {
-  chrome.storage.sync.set(
-    { tiempoCierre: tiempoCierre, pausado: pausado },
-    function () {
-      console.log("Initial values set.");
-    }
-  );
+chrome.storage.sync.get(["tiempoCierre", "pausado"], function (result) {
+  tiempoCierre = result.tiempoCierre || tiempoCierre;
+  pausado = result.pausado || pausado;
+
+  // Iniciar el horario aquí
+  scheduleCierrePestanas();
 });
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
@@ -24,11 +23,9 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 
 function cerrarPestanas() {
   if (!pausado) {
-    chrome.tabs.query({}, function (tabs) {
+    chrome.tabs.query({ url: "*://*.figma.com/*" }, function (tabs) {
       tabs.forEach(function (tab) {
-        if (tab.url.includes(url)) {
-          chrome.tabs.remove(tab.id);
-        }
+        chrome.tabs.remove(tab.id);
       });
     });
   }
